@@ -1,0 +1,98 @@
+CmdYourFarm
+
+# XP LEVELS #
+Lvl 1  (  10xp) : Growing fields (Wheat)
+Lvl 2  (  25xp) : Bakery (Bread)
+Lvl 3  (  50xp) : Chicken pen (Egg), Corn [gf2]
+Lvl 4  ( 150xp) : Delivery service, Corn cubes [bk2]
+Lvl 5  ( 200xp) : Soja [gf3]
+Lvl 6  ( 250xp) : Cow pen (Milk), Pig (Bacon)
+Lvl 7  ( 300xp) : Milkery (Butter), Hire farmers service
+Lvl 8  ( 350xp) : Sugar maker (Sugar, Brown sugar), Sugar Cane [gf4]
+Lvl 9  ( 500xp) : Ras/Blueberry [gf5], Muffins [bk3]
+Lvl 10 ( 700xp) : Restaurant service, Blackberry [gf6], 3-Berry muff. [bk4]
+Lvl 11 (1000xp) : Grill (Eggs & bacon), Cream [mk2]
+Lvl 12 (1500xp) : Avocado [gf7], Raw toast [bk5], Avocado toast [gr2]
+Lvl 13 (2000xp) : Fryer (French fries), Potatoes [gf8]
+Lvl 14 (2500xp) : Fishing spot (Fish fillet, Salmon), Empty burger [bk6], Fishburger, Smoked salmon [gr3]
+
+       =8485xp
+
+# Services #
+Delivery service : progression with Tiers (with 1 up-to 5 tasks to complete)
+                   little rewards with each task and bigger rewards with Tier promotion
+                   Tiers examples : Begginner (I-V), Little Farmer, Farmer, Great Farmer, ...
+
+Farmer hiring :    hire farmers to 
+
+
+Restaurant :       tables of 1-4 clients, serve everyone at once (all the items at once)
+                   max. ~10mins to complete or the order is cancelled
+
+# Primary-resource producer #
+-- Growing fields (gf)--
+
+ [lvl 1] Wheat        ( 10s,   5xp)
+ [lvl 2] Corn         ( 15s,   7xp)
+ [lvl 3] Soja         ( 30s,  10xp)
+ [lvl 4] Sugar cane   ( 60s,  15xp)
+ [lvl 5] Rasberry     (120s,  20xp)
+         Blueberry    (120s,  20xp)
+ [lvl 6] Blackberry   (150s,  30xp)
+ [lvl 7] Avocado      (250s,  50xp)
+ [lvl 8] Potato       (250s,  50xp)
+         Sweet potato (250s,  75xp)
+
+-- Pens : Chicken / Cow / Pig --
+
+ Produces Egg / Milk / Bacon
+ Eats Wheat / Wheat+Soja / Corn+Soja
+ [lvl 1] 1 Animal   50gold
+ [lvl 2] 2 Animals  100gold
+ ...
+
+-- Fishing spot (fsh)--
+
+ [lvl 1] Fish fillet (100s,  25xp)
+         Salmon      (300s, 100xp)
+
+# Machines #
+-- Bakery (bk)--
+ 
+ [lvl 1] Bread            ( 30s, 10xp) => 3x Wheat
+ [lvl 2] Corn cubes       ( 60s, 25xp) => 3x Corn + 2x Egg
+ [lvl 3] Muffin dough     ( 15s, 15xp) => 2x Wheat + 1x Egg + 1x Sugar
+         Rasberry muffin  (150s, 40xp) => 1x Muffin dough + 2x Rasberry
+         Blueberry muffin (150s, 40xp) => 1x Muffin dough + 2x Blueberry
+ [lvl 4] 3-Berries muffin (200s, 75xp) => 1x Muffin dough + 1x Raspberry + 1x Blueberry + 1x Blackberry
+ [lvl 5] Raw toast        ( 60s, 20xp) => 3x Wheat
+ [lvl 6] Empty burger     ( 60s, 40xp) => 2x Wheat + 1x Egg
+         
+
+-- Milkery (mk)--
+
+ [lvl 1] Butter     (120s,  28xp) => 2x Milk
+ [lvl 2] Cream      (150s,  33xp) => 3x Milk
+ [lvl 3] Yoghurt    (300s, 100xp) => 3x Milk + 1x Sugar
+
+-- Sugar maker (sg)--
+
+ [lvl 1] Sugar       (60s, 20px) => 2x Sugar cane
+         Brown sugar (60s, 20px) => 3x Sugar cane
+
+-- Grill (gr)--
+
+ [lvl 1] Eggs & bacon  ( 60s,  40xp) => 2x Egg + 2x Bacon
+ [lvl 2] Avocado toast ( 90s, 100xp) => 1x Raw toast + 1x Butter + 1x Avocado
+ [lvl 3] Fishburger    ( 60s, 120xp) => 1x Empty burger + 2x Fish fillet
+         Smoked salmon (100s, 125xp) => 2x Salmon
+
+-- Fryer (fr)--
+
+ [lvl 1] French fries       (100s,  40xp) => 3x Potato
+         Sweet potato fries (150x, 100xp) => 3x Sweet potato
+
+
+
+
+
