@@ -19,6 +19,12 @@ public class WrkMain extends Wrk {
         lvlWrk.setAcc(acc);
 
         rootCommands = new CustomCommand[] {
+                new CustomCommand("giveme", " ", "show this help page") {
+                    @Override
+                    public void execute(Command c) throws FarmException {
+                        AccountWrk.grantXP(c.getFirstInt());
+                    }
+                },
                 new CustomCommand("help", "h", "show this help page") {
                     @Override
                     public void execute(Command c) throws FarmException {

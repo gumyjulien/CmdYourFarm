@@ -8,12 +8,12 @@ Lvl 4  ( 150xp) : Delivery service, Corn cubes [bk2]
 Lvl 5  ( 200xp) : Soja [gf3]
 Lvl 6  ( 250xp) : Cow pen (Milk), Pig (Bacon)
 Lvl 7  ( 300xp) : Milkery (Butter), Hire farmers service
-Lvl 8  ( 350xp) : Sugar maker (Sugar, Brown sugar), Sugar Cane [gf4]
-Lvl 9  ( 500xp) : Ras/Blueberry [gf5], Muffins [bk3]
+Lvl 8  ( 350xp) : Confectionary (Sugar, Brown sugar), Sugar Cane [gf4]
+Lvl 9  ( 500xp) : Rasp/Blueberry [gf5], Muffins [bk3]
 Lvl 10 ( 700xp) : Restaurant service, Blackberry [gf6], 3-Berry muff. [bk4]
-Lvl 11 (1000xp) : Grill (Eggs & bacon), Cream [mk2]
-Lvl 12 (1500xp) : Avocado [gf7], Raw toast [bk5], Avocado toast [gr2]
-Lvl 13 (2000xp) : Fryer (French fries), Potatoes [gf8]
+Lvl 11 (1000xp) : Grill (Eggs & bacon), Coffee shop (Coffee), Cocoa [gf7], Cream [mk2], Espresso [cs2]
+Lvl 12 (1500xp) : Avocado [gf8], Raw toast [bk5], Avocado toast [gr2]
+Lvl 13 (2000xp) : Fryer (French fries), Potatoes [gf9]
 Lvl 14 (2500xp) : Fishing spot (Fish fillet, Salmon), Empty burger [bk6], Fishburger, Smoked salmon [gr3]
 
        =8485xp
@@ -21,9 +21,12 @@ Lvl 14 (2500xp) : Fishing spot (Fish fillet, Salmon), Empty burger [bk6], Fishbu
 # Services #
 Delivery service : progression with Tiers (with 1 up-to 5 tasks to complete)
                    little rewards with each task and bigger rewards with Tier promotion
-                   Tiers examples : Begginner (I-V), Little Farmer, Farmer, Great Farmer, ...
+                   Tiers examples : Beginner (I-V), Little Farmer, Farmer, Great Farmer, ...
 
-Farmer hiring :    hire farmers to 
+Farmer hiring :    hire farmers to automatically manage a certain building.
+                   Farmer have different levels for the abilities : 
+                   efficiency (delay before pickup), storage ability (max items at once), versatility (nb of                
+                   different items at once)
 
 
 Restaurant :       tables of 1-4 clients, serve everyone at once (all the items at once)
@@ -36,11 +39,13 @@ Restaurant :       tables of 1-4 clients, serve everyone at once (all the items 
  [lvl 2] Corn         ( 15s,   7xp)
  [lvl 3] Soja         ( 30s,  10xp)
  [lvl 4] Sugar cane   ( 60s,  15xp)
- [lvl 5] Rasberry     (120s,  20xp)
+ [lvl 5] Raspberry    (120s,  20xp)
          Blueberry    (120s,  20xp)
  [lvl 6] Blackberry   (150s,  30xp)
- [lvl 7] Avocado      (250s,  50xp)
- [lvl 8] Potato       (250s,  50xp)
+ [lvl 8] Coffee beans (200s,  50xp)
+         Cocoa        (220s,  50xp)
+ [lvl 8] Avocado      (250s,  50xp)
+ [lvl 9] Potato       (250s,  50xp)
          Sweet potato (250s,  75xp)
 
 -- Pens : Chicken / Cow / Pig --
@@ -62,7 +67,7 @@ Restaurant :       tables of 1-4 clients, serve everyone at once (all the items 
  [lvl 1] Bread            ( 30s, 10xp) => 3x Wheat
  [lvl 2] Corn cubes       ( 60s, 25xp) => 3x Corn + 2x Egg
  [lvl 3] Muffin dough     ( 15s, 15xp) => 2x Wheat + 1x Egg + 1x Sugar
-         Rasberry muffin  (150s, 40xp) => 1x Muffin dough + 2x Rasberry
+         Raspberry muffin  (150s, 40xp) => 1x Muffin dough + 2x Raspberry
          Blueberry muffin (150s, 40xp) => 1x Muffin dough + 2x Blueberry
  [lvl 4] 3-Berries muffin (200s, 75xp) => 1x Muffin dough + 1x Raspberry + 1x Blueberry + 1x Blackberry
  [lvl 5] Raw toast        ( 60s, 20xp) => 3x Wheat
@@ -75,10 +80,17 @@ Restaurant :       tables of 1-4 clients, serve everyone at once (all the items 
  [lvl 2] Cream      (150s,  33xp) => 3x Milk
  [lvl 3] Yoghurt    (300s, 100xp) => 3x Milk + 1x Sugar
 
--- Sugar maker (sg)--
+-- Confectionery (cf)--
 
- [lvl 1] Sugar       (60s, 20px) => 2x Sugar cane
-         Brown sugar (60s, 20px) => 3x Sugar cane
+ [lvl 1] Sugar       (60s, 20xp) => 2x Sugar cane
+         Brown sugar (60s, 20xp) => 3x Sugar cane
+ [lvl 2] Chocolate   (90s, 55xp) => 3x Cocoa
+
+-- Coffee shop (cs)--
+
+ [lvl 1] Coffee      (30s, 25xp) => 2x Cocoa
+ [lvl 2] Espresso    (30s, 20xp) => 2x Cocoa
+ 
 
 -- Grill (gr)--
 

@@ -11,10 +11,12 @@ import java.util.Objects;
 public class BuildingWrk extends Wrk {
 
     public BuildingWrk() {
-        this.buildings = new CraftBuilding[] {
-                new GrowingFields(),
-                new Bakery()
-        };
+        if(buildings == null) {
+            this.buildings = new CraftBuilding[]{
+                    new GrowingFields(),
+                    new Bakery()
+            };
+        }
     }
 
     public void printAllAvailableBuildings(Account acc) throws FarmException {
