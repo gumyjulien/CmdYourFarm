@@ -3,6 +3,7 @@ package wrk;
 import beans.*;
 import beans.craftbuildings.Bakery;
 import beans.craftbuildings.GrowingFields;
+import beans.craftbuildings.Milkery;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +15,8 @@ public class BuildingWrk extends Wrk {
         if(buildings == null) {
             this.buildings = new CraftBuilding[]{
                     new GrowingFields(),
-                    new Bakery()
+                    new Bakery(),
+                    new Milkery()
             };
         }
     }

@@ -13,7 +13,7 @@ Lvl 9  ( 500xp) : Rasp/Blueberry [gf5], Muffins [bk3]
 Lvl 10 ( 700xp) : Restaurant service, Blackberry [gf6], 3-Berry muff. [bk4]
 Lvl 11 (1000xp) : Grill (Eggs & bacon), Coffee shop (Coffee), Cocoa [gf7], Cream [mk2], Espresso [cs2]
 Lvl 12 (1500xp) : Avocado [gf8], Raw toast [bk5], Avocado toast [gr2]
-Lvl 13 (2000xp) : Fryer (French fries), Potatoes [gf9]
+Lvl 13 (2000xp) : Fryer (French fries), Potatoes [gf9], Yoghurt [mk3]
 Lvl 14 (2500xp) : Fishing spot (Fish fillet, Salmon), Empty burger [bk6], Fishburger, Smoked salmon [gr3]
 
        =8485xp

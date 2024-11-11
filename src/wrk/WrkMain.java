@@ -88,9 +88,9 @@ public class WrkMain extends Wrk {
                                 if(bdWrk.getAllAvailableBuildings(acc).contains(b) && Arrays.stream(acc.getBuildings()).noneMatch(b::equals)) {
                                     int cost = b.getPrice();
                                     if (acc.getGold() >= cost) {
-                                        bdWrk.upgradeBuilding(b);
+                                        bdWrk.buildBuilding(acc, b);
                                         acc.changeGold(-cost);
-                                        System.out.println(b.getName() + " successfully upgraded to level " + b.getLevel() + " !");
+                                        System.out.println(b.getName() + " successfully built !");
                                     } else {
                                         throw new FarmException("You need " + (cost - acc.getGold()) + " more gold to build this building");
                                     }
