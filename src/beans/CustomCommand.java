@@ -25,7 +25,7 @@ public abstract class CustomCommand {
 
     @Override
     public String toString() {
-        return this.alias + " ".repeat(10 - alias.length()) + Wrk.italic(this.smol) + " ".repeat(6 - smol.length())
+        return this.alias + " ".repeat(17 - alias.length()) + Wrk.italic(this.smol) + " ".repeat(6 - smol.length())
                 + desc.replace("\r\n", "\r\n" + " ".repeat(15));
     }
 

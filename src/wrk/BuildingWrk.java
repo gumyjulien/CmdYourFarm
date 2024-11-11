@@ -20,6 +20,23 @@ public class BuildingWrk extends Wrk {
     }
 
     public void printAllAvailableBuildings(Account acc) throws FarmException {
+        ArrayList<CraftBuilding> blds = getAllAvailableBuildings(acc);
+
+        if(!blds.isEmpty()) {
+            for (CraftBuilding cb : blds) {
+                boolean isBuilt = acc.isBuildingBuilt(cb);
+                System.out.println((isBuilt ? " ".repeat(11) : Wrk.italic("(Un-built)")) + " " +
+                        cb.getName() + " ".repeat(Math.max(1, 18 - cb.getName().length())) + Wrk.italic(cb.getAlias()) +
+                        (!isBuilt ? " Cost : " + cb.getPrice() + " gold" : ""));
+            }
+        }
+    }
+
+    public void printAllBuildingStatus(Account acc) {
+        for (CraftBuilding bd : acc.getBuildings()) bd.printProductionState();
+    }
+
+    public ArrayList<CraftBuilding> getAllAvailableBuildings(Account acc) throws FarmException {
         ArrayList<CraftBuilding> blds = new ArrayList<>(Arrays.asList(acc.getXpLevel().getUnlockedBuildings()));
 
         for (XPLevel lvl : LevelWrk.getAllPreviousLevels(acc.getXpLevel().getId())) {
@@ -28,16 +45,7 @@ public class BuildingWrk extends Wrk {
 
         blds.removeIf(Objects::isNull);
 
-        if(blds.isEmpty()) {
-
-        } else {
-            for (CraftBuilding cb : blds) {
-                boolean isBuilt = acc.isBuildingBuilt(cb);
-                System.out.println((isBuilt ? " ".repeat(11) : Wrk.italic("(Un-built)")) + " " +
-                        cb.getName() + " ".repeat(Math.max(1, 15 - cb.getName().length())) + Wrk.italic(cb.getAlias()) +
-                        (!isBuilt ? " Cost : " + cb.getPrice() + " gold" : ""));
-            }
-        }
+        return blds;
     }
 
     public void upgradeBuilding(CraftBuilding b) throws FarmException {
@@ -47,6 +55,15 @@ public class BuildingWrk extends Wrk {
             throw new FarmException("Invalid building to upgrade");
         }
     }
+
+    public void buildBuilding(Account acc, CraftBuilding b) throws FarmException {
+        if(b != null) {
+            acc.buildNewBuilding(b);
+        } else {
+            throw new FarmException("Invalid building to upgrade");
+        }
+    }
+
     public static CraftBuilding[] getAllBuildings() {
         return buildings;
     }

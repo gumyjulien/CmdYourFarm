@@ -187,6 +187,21 @@ public abstract class CraftBuilding extends Building{
         printNextLevelInfo();
     }
 
+    public void printProductionState() {
+        StringBuilder s = new StringBuilder(name + ": " + " ".repeat(18 - name.length()));
+        for (int i = 0; i < productionSlots.length; i++) {
+            ProductionSlot slot = productionSlots[i];
+            if(slot.getItem() != null) {
+                s.append(slot.getItem().getName()).append(slot.isReady() ? Wrk.green(" (Ready)") : " (" + slot.getTimeLeft() + "s)");
+            } else {
+                s.append(Wrk.italic("Empty"));
+            }
+            s.append(", ");
+        }
+        s.delete(s.length() - 2, s.length());
+        System.out.println(s);
+    }
+
     @Override
     public void printNextLevelInfo() {
         Upgrade up = this.getUpgrade(level + 1);

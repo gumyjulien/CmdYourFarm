@@ -19,7 +19,7 @@ public class WrkMain extends Wrk {
         lvlWrk.setAcc(acc);
 
         rootCommands = new CustomCommand[] {
-                new CustomCommand("giveme", " ", "show this help page") {
+                new CustomCommand("giveme", " ", "free xp") {
                     @Override
                     public void execute(Command c) throws FarmException {
                         AccountWrk.grantXP(c.getFirstInt());
@@ -43,13 +43,38 @@ public class WrkMain extends Wrk {
                         accWrk.showStockContent();
                     }
                 },
+                new CustomCommand("building-status", "bd-st","show the status of every building") {
+                    @Override
+                    public void execute(Command c) throws FarmException {
+                        bdWrk.printAllBuildingStatus(acc);
+                    }
+                },
                 new CustomCommand("build", "bd","<building> : build the specified building") {
                     @Override
                     public void execute(Command c) throws FarmException {
-
+                        String bld = c.getArg(0);
+                        if(bld != null) {
+                            CraftBuilding b = BuildingWrk.getBuildingByAlias(bld);
+                            if(b != null && b.getNextUpgrade() != null) {
+                                if(bdWrk.getAllAvailableBuildings(acc).contains(b) && Arrays.stream(acc.getBuildings()).noneMatch(b::equals)) {
+                                    int cost = b.getPrice();
+                                    if (acc.getGold() >= cost) {
+                                        bdWrk.upgradeBuilding(b);
+                                        acc.changeGold(-cost);
+                                        System.out.println(b.getName() + " successfully upgraded to level " + b.getLevel() + " !");
+                                    } else {
+                                        throw new FarmException("You need " + (cost - acc.getGold()) + " more gold to build this building");
+                                    }
+                                } else {
+                                    throw new FarmException("XP Level " + b.getNextUpgrade().xpLevelRequired + " required to build this building");
+                                }
+                            } else {
+                                throw new FarmException("Invalid building to upgrade");
+                            }
+                        }
                     }
                 },
-                new CustomCommand("buildings", "ls-bd","show every available building") {
+                new CustomCommand("buildings", "bd-ls","show every available building") {
                     @Override
                     public void execute(Command c) throws FarmException {
                         bdWrk.printAllAvailableBuildings(acc);
