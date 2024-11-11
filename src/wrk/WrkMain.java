@@ -19,10 +19,20 @@ public class WrkMain extends Wrk {
         lvlWrk.setAcc(acc);
 
         rootCommands = new CustomCommand[] {
-                new CustomCommand("giveme", " ", "free xp") {
+                new CustomCommand("givexp", " ", "free xp") {
                     @Override
                     public void execute(Command c) throws FarmException {
                         AccountWrk.grantXP(c.getFirstInt());
+                    }
+                },
+                new CustomCommand("give", " ","<item> <amount> free items") {
+                    @Override
+                    public void execute(Command c) throws FarmException {
+                        Item it = ItemWrk.getItemByAlias(c.getArg(0));
+                        int nb = c.getFirstInt();
+                        if(it != null && nb > 0) {
+                            acc.getStock().add(it, nb);
+                        }
                     }
                 },
                 new CustomCommand("help", "h", "show this help page") {
@@ -41,6 +51,25 @@ public class WrkMain extends Wrk {
                     @Override
                     public void execute(Command c) throws FarmException {
                         accWrk.showStockContent();
+                    }
+                },
+                new CustomCommand("sell", "sl","<item> <amount> : sell the amount of items in exchange of gold") {
+                    @Override
+                    public void execute(Command c) throws FarmException {
+                        Item it = ItemWrk.getItemByAlias(c.getArg(0));
+                        int nb = c.getFirstInt();
+                        if(it != null && nb > 0) {
+                            if(acc.getStock().contains(it, nb)) {
+                                int gold = it.getMinGoldValue() * nb;
+                                acc.changeGold(gold);
+                                acc.getStock().remove(it, nb);
+                                System.out.println("You received " + gold + " gold in exchange of " + nb + "x " + it.getName());
+                            } else {
+                                throw new FarmException("Not enough " + it.getName());
+                            }
+                        } else {
+                            throw new FarmException("Invalid item or amount");
+                        }
                     }
                 },
                 new CustomCommand("building-status", "bd-st","show the status of every building") {

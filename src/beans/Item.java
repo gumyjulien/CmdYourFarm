@@ -53,7 +53,21 @@ public class Item /*implements Comparable*/ {
         return this;
     }
 
+    public int getMinGoldValue() {
+        return getGoldValue(this);
+    }
 
+    private int getGoldValue(Item i) {
+        int v = 0;
+        if(!i.recipe.isEmpty()) {
+            for (Item it : i.recipe.keySet()) {
+                v += getGoldValue(it) * i.recipe.get(it);
+            }
+        } else {
+            v = Math.max(1, productionTime / 25);
+        }
+        return v;
+    }
 
     private String alias;
     private String name;

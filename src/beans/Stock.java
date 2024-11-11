@@ -55,11 +55,15 @@ public class Stock extends Building {
         for (Item i : items.keySet()) remove(i, items.get(i));
     }
 
+    public boolean contains(Item i, int nb) {
+        return content.getOrDefault(i, 0) >= nb;
+    }
+
     public boolean contains(HashMap<Item, Integer> items) {
         boolean res = true;
         for (Item i : items.keySet()) {
-            int nbReq = items.get(i);
-            if(content.getOrDefault(i, 0) < nbReq) {
+            int nb = items.get(i);
+            if(!contains(i, nb)) {
                 res = false;
                 break;
             }
