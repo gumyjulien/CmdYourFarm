@@ -2,11 +2,13 @@ package wrk;
 
 import beans.*;
 import beans.craftbuildings.Bakery;
+import beans.craftbuildings.Confectionery;
 import beans.craftbuildings.GrowingFields;
 import beans.craftbuildings.Milkery;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ConcurrentModificationException;
 import java.util.Objects;
 
 public class BuildingWrk extends Wrk {
@@ -16,7 +18,8 @@ public class BuildingWrk extends Wrk {
             this.buildings = new CraftBuilding[]{
                     new GrowingFields(),
                     new Bakery(),
-                    new Milkery()
+                    new Milkery(),
+                    new Confectionery()
             };
         }
     }

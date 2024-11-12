@@ -26,7 +26,9 @@ public class LevelWrk extends Wrk {
                 BuildingWrk.getBuildingByAlias("milkery")
         });
 
-        lvls[7] = new XPLevel(8, 350, new CraftBuilding[] {});
+        lvls[7] = new XPLevel(8, 350, new CraftBuilding[] {
+                BuildingWrk.getBuildingByAlias("confectionary")
+        });
 
         lvls[8] = new XPLevel(9, 500, new CraftBuilding[] {});
 
@@ -42,7 +44,7 @@ public class LevelWrk extends Wrk {
 
 
         for (int i = 15; i <= lvls.length; i++) {
-            lvls[i-1] = new XPLevel(i, i * 25, new CraftBuilding[0]);
+            lvls[i-1] = new XPLevel(i, i * 50, new CraftBuilding[0]);
         }
 
     }
