@@ -1,10 +1,7 @@
 package wrk;
 
 import beans.*;
-import beans.craftbuildings.Bakery;
-import beans.craftbuildings.Confectionery;
-import beans.craftbuildings.GrowingFields;
-import beans.craftbuildings.Milkery;
+import beans.craftbuildings.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +16,10 @@ public class BuildingWrk extends Wrk {
                     new GrowingFields(),
                     new Bakery(),
                     new Milkery(),
-                    new Confectionery()
+                    new Confectionery(),
+                    new CoffeeShop(),
+                    new Grill(),
+                    new Fryer()
             };
         }
     }
