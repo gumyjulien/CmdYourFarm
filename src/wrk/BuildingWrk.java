@@ -41,6 +41,22 @@ public class BuildingWrk extends Wrk {
         for (CraftBuilding bd : acc.getBuildings()) bd.printProductionState();
     }
 
+    public static CraftBuilding getBuildingByItem(Item it) {
+        CraftBuilding bd = null;
+
+        for (CraftBuilding b : buildings) {
+            for (CraftBuilding.Upgrade up : b.getUpgrades()) {
+                if(Arrays.asList(up.itemsUnlocked).contains(it)) {
+                    bd = b;
+                    break;
+                }
+            }
+            if(bd != null) break;
+        }
+
+        return bd;
+    }
+
     public ArrayList<CraftBuilding> getAllAvailableBuildings(Account acc) throws FarmException {
         ArrayList<CraftBuilding> blds = new ArrayList<>(Arrays.asList(acc.getXpLevel().getUnlockedBuildings()));
 

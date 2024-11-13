@@ -53,6 +53,24 @@ public class WrkMain extends Wrk {
                         accWrk.showStockContent();
                     }
                 },
+                new CustomCommand("info", "if","<item> show the information about this item") {
+                    @Override
+                    public void execute(Command c) throws FarmException {
+                        Item it = ItemWrk.getItemByAlias(c.getArg(0));
+                        if(it != null) {
+                            System.out.println("Information about " + it.getName() + " (" + Wrk.italic(it.getAlias()) + ") :");
+                            CraftBuilding bd = BuildingWrk.getBuildingByItem(it);
+                            if(bd != null) {
+                                System.out.println("Produced in " + it.getProductionTime() + "s in your " + bd.getName() + " and grants " + it.getXpGranted() + "xp on pick-up");
+                            } else {
+                                System.out.println(Wrk.red("This item is not producible"));
+                            }
+                            System.out.println("The minimum gold value of this item is " + it.getMinGoldValue() + " gold");
+                        } else {
+                            throw new FarmException("Invalid item specified");
+                        }
+                    }
+                },
                 new CustomCommand("sell", "sl","<item> <amount> : sell the amount of items in exchange of gold") {
                     @Override
                     public void execute(Command c) throws FarmException {
