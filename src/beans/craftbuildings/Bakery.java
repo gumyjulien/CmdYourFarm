@@ -122,7 +122,7 @@ public class Bakery extends CraftBuilding {
         recipe.put(ItemWrk.getItemByAlias("wheat"), 2);
         recipe.put(ItemWrk.getItemByAlias("egg"), 1);
 
-        i = new Item("emptysandwich", "Empty sandwich").setRecipe(recipe)
+        i = new Item("emptyburger", "Empty burger").setRecipe(recipe)
                 .setProductionTime(60).setXpGranted(40);
         ItemWrk.addExistingItem(i, this);
         items.add(i);

@@ -14,6 +14,7 @@ public class BuildingWrk extends Wrk {
         if(buildings == null) {
             this.buildings = new CraftBuilding[]{
                     new GrowingFields(),
+                    new FishingSpot(),
                     new Bakery(),
                     new Milkery(),
                     new Confectionery(),
