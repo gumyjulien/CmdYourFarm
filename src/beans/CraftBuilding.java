@@ -134,6 +134,14 @@ public abstract class CraftBuilding extends Building{
         return this.upgrades;
     }
 
+    public ArrayList<Upgrade> getUpgradesByXPLevel(int lvl) {
+        ArrayList<Upgrade> res = new ArrayList<>();
+        for (Upgrade up : upgrades)
+            if(up.xpLevelRequired == lvl)
+                res.add(up);
+        return res;
+    }
+
     public Upgrade getUpgrade(int lvl) {
         return (this.upgrades.length > (lvl - 1) ? this.upgrades[lvl-1] : null);
     }

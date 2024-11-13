@@ -2,6 +2,8 @@ package wrk;
 
 import beans.*;
 
+import java.util.HashMap;
+
 public class LevelWrk extends Wrk {
 
     public LevelWrk() {
@@ -27,7 +29,7 @@ public class LevelWrk extends Wrk {
         });
 
         lvls[7] = new XPLevel(8, 350, new CraftBuilding[] {
-                BuildingWrk.getBuildingByAlias("confectionary")
+                BuildingWrk.getBuildingByAlias("confectionery")
         });
 
         lvls[8] = new XPLevel(9, 500, new CraftBuilding[] {});
@@ -89,10 +91,11 @@ public class LevelWrk extends Wrk {
 
     public static void lvlUpAccount(Account acc) {
         int id = acc.getXpLevel().getId();
-        acc.setXpLevel(getLvl(++id));
+        XPLevel newLvl = getLvl(++id);
+        acc.setXpLevel(newLvl);
         System.out.println("------- LEVEL UP !! ---------");
         System.out.println(" XP Level " + id + " reached ! ");
-        if(getLvl(id).getUnlockedBuildings().length > 0) {
+        if(newLvl.getUnlockedBuildings().length > 0) {
             System.out.print("Unlocked building(s) : ");
             StringBuilder list = new StringBuilder();
             for (CraftBuilding bd : getLvl(id).getUnlockedBuildings()) {
@@ -101,6 +104,21 @@ public class LevelWrk extends Wrk {
             list.delete(list.length() - 2, list.length());
             System.out.println(list);
         }
+
+        StringBuilder list = new StringBuilder();
+        for (CraftBuilding bd : BuildingWrk.getAllBuildings()) {
+            for(CraftBuilding.Upgrade up : bd.getUpgradesByXPLevel(id)) {
+                for (Item i : up.itemsUnlocked) {
+                    list.append(i.getName()).append(" (").append(bd.getName()).append("), ");
+                }
+            }
+        }
+        if(!list.isEmpty()) {
+            list.delete(list.length() - 2, list.length());
+            list.insert(0, "Unlocked item(s) : ");
+            System.out.println(list);
+        }
+
         System.out.println("-----------------------------");
     }
 

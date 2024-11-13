@@ -30,9 +30,9 @@ public class BuildingWrk extends Wrk {
         if(!blds.isEmpty()) {
             for (CraftBuilding cb : blds) {
                 boolean isBuilt = acc.isBuildingBuilt(cb);
-                System.out.println((isBuilt ? " ".repeat(11) : Wrk.italic("(Un-built)")) + " " +
-                        cb.getName() + " ".repeat(Math.max(1, 18 - cb.getName().length())) + Wrk.italic(cb.getAlias()) +
-                        (!isBuilt ? " Cost : " + cb.getPrice() + " gold" : ""));
+                System.out.println((isBuilt ? " ".repeat(10) : Wrk.italic("(Un-built)")) + " " +
+                        cb.getName() + " ".repeat(Math.max(1, 17 - cb.getName().length())) + Wrk.italic(cb.getAlias()) +
+                         " ".repeat(Math.max(1, 11 - cb.getAlias().length())) + (!isBuilt ? " Cost : " + cb.getPrice() + " gold" : ""));
             }
         }
     }
