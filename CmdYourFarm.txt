@@ -102,7 +102,7 @@ Restaurant :       tables of 1-4 clients, serve everyone at once (all the items 
 -- Fryer (fr)--
 
  [lvl 1] French fries       (100s,  40xp) => 3x Potato
-         Sweet potato fries (150x, 100xp) => 3x Sweet potato
+         Sweet potato fries (150s, 100xp) => 3x Sweet potato
 
 
 
