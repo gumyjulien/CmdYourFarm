@@ -88,8 +88,8 @@ Restaurant :       tables of 1-4 clients, serve everyone at once (all the items 
 
 -- Coffee shop (cs)--
 
- [lvl 1] Coffee      (30s, 25xp) => 2x Cocoa
- [lvl 2] Espresso    (30s, 20xp) => 2x Cocoa
+ [lvl 1] Coffee      (30s, 25xp) => 2x Coffee beans
+ [lvl 2] Espresso    (30s, 20xp) => 2x Coffee beans
  
 
 -- Grill (gr)--

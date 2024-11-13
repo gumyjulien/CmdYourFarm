@@ -55,7 +55,7 @@ public class Confectionery extends CraftBuilding {
 
 
         setUpgrades(new Upgrade[] {
-                new Upgrade(3, new Item[] { items.get(0), items.get(1) }),
+                new Upgrade(3, 250, new Item[] { items.get(0), items.get(1) }),
 
                 new Upgrade(11, 250, 200, 2, new Item[] {
                         items.get(2)

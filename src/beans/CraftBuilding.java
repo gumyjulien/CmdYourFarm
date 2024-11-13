@@ -229,8 +229,9 @@ public abstract class CraftBuilding extends Building{
 
     public static class Upgrade {
 
-        public Upgrade(int slots, Item[] itemsUnlocked) {
+        public Upgrade(int slots, int price, Item[] itemsUnlocked) {
             this.addedSlots = slots;
+            this.goldCost = price;
             this.itemsUnlocked = itemsUnlocked;
         }
 

@@ -136,7 +136,7 @@ public class GrowingFields extends CraftBuilding {
         items.add(i);
 
         setUpgrades(new Upgrade[] {
-                new Upgrade(2, new Item[] { items.get(0) }),
+                new Upgrade(2, 0, new Item[] { items.get(0) }),
 
                 new Upgrade(3, 50, 20, 1, new Item[] {
                         items.get(1)

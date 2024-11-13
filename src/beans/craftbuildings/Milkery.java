@@ -56,7 +56,7 @@ public class Milkery extends CraftBuilding {
 
 
         setUpgrades(new Upgrade[] {
-                new Upgrade(2, new Item[] { items.get(0) }),
+                new Upgrade(2, 200, new Item[] { items.get(0) }),
 
                 new Upgrade(11, 250, 100, 1, new Item[] {
                         items.get(1)
