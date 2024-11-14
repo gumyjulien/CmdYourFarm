@@ -130,7 +130,7 @@ public class Bakery extends CraftBuilding {
         setUpgrades(new Upgrade[] {
                 new Upgrade(2, 50, new Item[] { items.get(0) }),
 
-                new Upgrade(2, 120, 50, 1, new Item[] {
+                new Upgrade(4, 120, 50, 1, new Item[] {
                         items.get(1)
                 }),
 
